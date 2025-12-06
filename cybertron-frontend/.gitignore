@@ -1,0 +1,22 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+.env
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Visual Studio Code
+.vscode/
+.idea/
+
+# Miscellaneous
+.angular/
+
+# System files
+.DS_Store
+Thumbs.db

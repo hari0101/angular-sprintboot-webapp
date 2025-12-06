@@ -1,0 +1,19 @@
+<div class="chat-container">
+    <h3>Chat with Cybertron</h3>
+
+    <div *ngIf="!isBackendLive()" class="error-banner">
+        ⚠️ CONNECTION LOST: Backend Offline
+    </div>
+
+    <div class="messages">
+        <div *ngFor="let msg of messages()" class="message" [class.user]="msg.sender === 'You'"
+            [class.bot]="msg.sender !== 'You'">
+            <strong>{{ msg.sender }}:</strong> {{ msg.text }}
+        </div>
+    </div>
+    <div class="input-area" [class.disabled]="!isBackendLive()">
+        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message..."
+            [disabled]="!isBackendLive()" />
+        <button (click)="sendMessage()" [disabled]="!isBackendLive()">Send</button>
+    </div>
+</div>

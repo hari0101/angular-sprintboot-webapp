@@ -1,0 +1,7 @@
+# Compiled output
+*.class
+
+# Log files
+*.log
+
+.env

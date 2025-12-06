@@ -1,0 +1,37 @@
+<div class="monitor-grid">
+  <!-- Frontend Card -->
+  <div class="status-card frontend" [class.up]="frontendStatus() === 'UP'" [class.down]="frontendStatus() !== 'UP'">
+    <div class="card-header">
+      <div class="icon">FE</div>
+      <h2>FRONTEND</h2>
+    </div>
+    <div class="status-display">
+      <span class="status-text">{{ frontendStatus() }}</span>
+      <div class="pulse-ring"></div>
+    </div>
+    <div class="meta">
+      <span>PORT: 4200</span>
+      <span>V.1.0.0</span>
+    </div>
+  </div>
+
+  <!-- Backend Card -->
+  <div class="status-card backend" [class.up]="status() === 'UP'" [class.down]="status() === 'DOWN'"
+    [class.checking]="status() === 'Checking...'">
+    <div class="card-header">
+      <div class="icon">BE</div>
+      <h2>BACKEND</h2>
+    </div>
+    <div class="status-display">
+      <span class="status-text">{{ status() }}</span>
+      <div class="pulse-ring"></div>
+    </div>
+    <div class="meta">
+      <span>PORT: 8081</span>
+      <span>{{ details()?.status || '---' }}</span>
+    </div>
+    <button class="refresh-btn" (click)="checkHealth()">
+      <span>REFRESH CONNECTION</span>
+    </button>
+  </div>
+</div>

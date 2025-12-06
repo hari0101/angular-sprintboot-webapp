@@ -1,0 +1,4 @@
+com\cybertron\CorsConfig.class
+com\cybertron\CybertronApplication.class
+com\cybertron\ChatController.class
+com\cybertron\HealthController.class
